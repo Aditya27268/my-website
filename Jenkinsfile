@@ -3,11 +3,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo "Branch detected: ${env.BRANCH_NAME}"
                 sh 'docker build -t website .'
             }
         }
         
-        stage('Deploy to Production (Master)') {
+        stage('Deploy to Production Port:82') {
             when {
                 branch 'master'
             }
