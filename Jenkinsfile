@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Deploy the Docker container
-                    sh 'docker run -d -p 82:80 --name mywebsite-container --rm website'
+                    sh 'docker run -d -p 82:80 --rm website'
                 }
             }
         }
